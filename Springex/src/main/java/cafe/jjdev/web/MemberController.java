@@ -1,5 +1,7 @@
 package cafe.jjdev.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,8 +20,10 @@ public class MemberController {
 	private MemberService memberService;
 	
 	@RequestMapping(value="/memberList")
-	public String memberList() {
+	public String memberList(Model model) {
 		System.out.println("memberList 요청");
+		List<Member> list = memberDao.selectMemberList();
+		model.addAttribute("list",list);
 		//DB list get
 		return "memberList"; //memberList view로 보여주겠다! 
 	}

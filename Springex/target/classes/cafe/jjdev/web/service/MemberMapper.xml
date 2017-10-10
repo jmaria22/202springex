@@ -10,6 +10,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="member_name" property="memberName"/>
 	</resultMap>
 	
+	<select id="selectMemberList" resultMap="resultMember">
+		SELECT member_no, member_id, member_name FROM member
+	</select>
+	
 	<insert id="insertMember" parameterType="cafe.jjdev.web.service.Member">
 		INSERT INTO member(
 			member_id,
