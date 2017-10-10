@@ -5,15 +5,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import cafe.jjdev.web.service.Member;
 import cafe.jjdev.web.service.MemberDao;
+import cafe.jjdev.web.service.MemberService;
 
 @Controller
 public class MemberController {
 	@Autowired
 	private MemberDao memberDao;
+	@Autowired
+	private MemberService memberService;
 	
 	@RequestMapping(value="memberList")
 	public String memberList() {
@@ -26,6 +28,7 @@ public class MemberController {
 	public String addMember(MemberRequest memberRequest) { //command객체이용하는 방법
 		System.out.println(memberRequest);
 		// DB입력
+		memberService.addMember(memberRequest);
 		return "redirect:/memberList"; //response.sendRedirect("/memberList")와 같다
 	}
 	
