@@ -14,6 +14,10 @@ public class MemberDao {
 	//매번 써줘야 되는 번거러움을 해소하기위해 상수화 시킨다.
 	private final String NS = "cafe.jjdev.web.service.MemberMapper."; 
 	
+	public Member login(Member member) {
+		return sqlSessionTemplate.selectOne(NS+"login", member);
+	}
+	
 	public List<Member> selectMemberList() {
 		return sqlSessionTemplate.selectList(NS+"selectMemberList");
 	}

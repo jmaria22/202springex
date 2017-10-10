@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>회원전용 페이지 </h1>
+	<a href="./logout">logout</a>
 </body>
 </html>
