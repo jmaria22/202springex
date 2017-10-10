@@ -17,7 +17,7 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	@RequestMapping(value="memberList")
+	@RequestMapping(value="/memberList")
 	public String memberList() {
 		System.out.println("memberList ฟไรป");
 		//DB list get
