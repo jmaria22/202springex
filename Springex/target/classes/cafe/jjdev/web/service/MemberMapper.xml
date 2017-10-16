@@ -27,9 +27,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		) VALUES (
 			#{memberId},
 			#{memberPw},
-			#{memberName}
-		)
-		
+			#{memberName}	
+		)		
 	</insert>
 	
 	<select id="selectMemberOne" parameterType="int" resultMap="resultMember">
