@@ -8,7 +8,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="member_id" property="memberId"/>
 		<result column="member_pw" property="memberPw"/>
 		<result column="member_name" property="memberName"/>
-	</resultMap>
+	</resultMap> 
 	
 	<select id="login" resultMap="resultMember" parameterType="cafe.jjdev.web.service.Member">
 		SELECT member_no, member_id, member_name FROM member	
